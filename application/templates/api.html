@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} API {% endblock %}
+
+
+{% block content %}
+    
+<h1 class="text-center" style="margin: 3rem 0">Sample API</h1>
+
+<h3 style="margin: 1rem 0">Get</h3>
+
+<div id="get-json-container">
+    <script>
+      const jsonfile = JSON.parse({{jsonfile|tojson}});
+      console.log(jsonfile);
+      document.querySelector("#get-json-container").innerHTML = JSON.stringify(jsonfile, null, 2);
+    </script>
+</div>
+{% endblock %}  

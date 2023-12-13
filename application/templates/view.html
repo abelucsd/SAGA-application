@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} API {% endblock %}
+
+
+{% block content %}
+
+<h1 class="text-center" style="margin: 3rem">Top 10 of Each Sample</h1>
+<div id="sample-table-container">
+    <table id="sample-table" class="table">
+        <thead>
+            <tr>
+                <th>chrom1</th>
+                <th>start1</th>
+                <th>start2</th>
+                <th>chrom2</th>
+                <th>start2</th>
+                <th>end2</th>
+                <th>sample</th>
+                <th>score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in table  %}
+            <tr>
+                <td>{{entry.chrom1}}</td>
+                <td>{{entry.start1}}</td>
+                <td>{{entry.end1}}</td>
+                <td>{{entry.chrom2}}</td>
+                <td>{{entry.start2}}</td>
+                <td>{{entry.end2}}</td>
+                <td>{{entry.sample}}</td>
+                <td>{{entry.score}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    
+    $(document).ready(function () {
+      $('#sample-table').DataTable({
+        pageLength: 100,
+        "language": {
+            search: 'Filter by Sample:',
+        },
+        columns: [
+            {orderable: false, searchable: false},
+            {orderable: false, searchable: false},
+            {orderable: false, searchable: false},
+            {orderable: false, searchable: false},
+            {orderable: false, searchable: false},
+            {orderable: false, searchable: false}, 
+            null,
+            {searchable: false},
+        ],
+        order: [[6, "asc"]]
+      });
+    });
+</script>
+
+{% endblock %}
