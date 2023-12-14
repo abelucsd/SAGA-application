@@ -1,3 +1,11 @@
+Access through http://3.16.11.28:5000/
+
+Use the default command for a post:
+curl http://3.16.11.28:5000/api -H "Content-Type: text/xml" --data-binary "@example.bedpe"
+
+Display the table view at:
+http://3.16.11.28:5000/view
+
 Design
 
 Models
