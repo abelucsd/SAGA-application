@@ -32,6 +32,4 @@ class Sample(db.Model):
     def validate_score(self, sample, score):
         if score < 0 or score > 10:
             raise AssertionError('Score must be between 0 and 10: score {} at {}'.format(score, self))
-        return score
-    
-    # AssertionError('Score must be between 0 and 10: score score at sample 11') == e
+        return score    
