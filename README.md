@@ -1,3 +1,6 @@
+# Sample App
+
+### Instructions 
 Access through http://3.16.11.28:5000/
 
 Use the default command for a post:
@@ -6,13 +9,13 @@ curl http://3.16.11.28:5000/api -H "Content-Type: text/xml" --data-binary "@exam
 Display the table view at:
 http://3.16.11.28:5000/view
 
-Design
+### Design
 
-Models
+#### Models
 
 I chose to create a Sample object because each data entry is a sample entity. All of the fields are required. From observing the sample file, the score of each sample should be within the range 0 to 10.
 
-Post
+#### Post
 
 - Chose to return json messages in case it is required to pass them in json format.
 - Receives a sample data file and inserts only the top 10 of each sample into the database
@@ -22,11 +25,11 @@ Post
     - The data is checked to be tab delimited.
     - Check the data if it has the required column attributes.
 
-Get
+#### Get
 
 - Renders json sample data into template.
 
-Testing
+#### Testing
 
 - test_routes.py
     - Home page:
